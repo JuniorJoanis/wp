@@ -1,0 +1,12 @@
+<h1>Dashboard#assign</h1>
+<p>Find me in app/views/dashboard/assign.html.erb</p>
+
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+<% end %>
+
+<%= form_tag(:controller => "dashboard", :action => "assign") do %>
+  <%= select_date Date.today, :prefix => :date %>
+  <br/>
+  <%= submit_tag("Assign") %>
+<% end %>

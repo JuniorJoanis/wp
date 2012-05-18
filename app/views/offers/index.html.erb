@@ -1,0 +1,31 @@
+<h1>Listing offers</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Postal</th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th>Default</th>
+  </tr>
+
+<% @offers.each do |offer| %>
+  <tr>
+    <td><%= offer.name %></td>
+    <td><%= offer.postal %></td>
+    <td><%= offer.user_id %></td>
+    <td><%= offer.date %></td>
+    <td><%= offer.default %></td>
+    <td><%= link_to 'Show', offer %></td>
+    <td><%= link_to 'Edit', edit_offer_path(offer) %></td>
+    <td><%= link_to 'Destroy', offer, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Offer', new_offer_path %>
